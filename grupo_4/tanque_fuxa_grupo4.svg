@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900" role="img" aria-labelledby="title desc">
+  <title id="title">Tanque industrial para supervisório FUXA</title>
+  <desc id="desc">Tanque vetorial com líquido, bomba, tubulação, válvula e escala de nível.</desc>
+
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8998a4"/>
+      <stop offset="0.18" stop-color="#eef3f6"/>
+      <stop offset="0.42" stop-color="#aebac3"/>
+      <stop offset="0.64" stop-color="#f9fbfc"/>
+      <stop offset="0.84" stop-color="#9ba9b4"/>
+      <stop offset="1" stop-color="#71808b"/>
+    </linearGradient>
+    <linearGradient id="pipe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#edf2f5"/>
+      <stop offset="0.5" stop-color="#8797a2"/>
+      <stop offset="1" stop-color="#d6dfe4"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#55c8fb" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#178ed2" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#0a65a5" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="pumpGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#50bd70"/>
+      <stop offset="1" stop-color="#11713b"/>
+    </linearGradient>
+    <clipPath id="tankClip">
+      <path d="M300 225 C300 175 340 150 390 150 H610 C660 150 700 175 700 225 V650 C700 710 650 745 595 745 H405 C350 745 300 710 300 650 Z"/>
+    </clipPath>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#17324a" flood-opacity="0.25"/>
+    </filter>
+    <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#17324a" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <g id="tank-asset">
+    <ellipse id="tank-shadow" cx="500" cy="806" rx="245" ry="34" fill="#17324a" opacity="0.16"/>
+
+    <g id="inlet-line" filter="url(#smallShadow)">
+      <rect x="45" y="315" width="260" height="54" rx="18" fill="url(#pipe)" stroke="#50616d" stroke-width="5"/>
+      <rect x="45" y="325" width="260" height="13" rx="6" fill="#fff" opacity="0.48"/>
+      <rect x="280" y="300" width="30" height="84" rx="8" fill="url(#steel)" stroke="#475a66" stroke-width="4"/>
+      <g id="inlet-flow-arrow">
+        <path d="M80 342 H210" fill="none" stroke="#24a65a" stroke-width="15" stroke-linecap="round"/>
+        <path d="M210 315 L258 342 L210 369 Z" fill="#24a65a"/>
+      </g>
+    </g>
+
+    <g id="outlet-line" filter="url(#smallShadow)">
+      <rect x="695" y="625" width="260" height="54" rx="18" fill="url(#pipe)" stroke="#50616d" stroke-width="5"/>
+      <rect x="695" y="635" width="260" height="13" rx="6" fill="#fff" opacity="0.48"/>
+      <rect x="690" y="610" width="30" height="84" rx="8" fill="url(#steel)" stroke="#475a66" stroke-width="4"/>
+      <g id="outlet-flow-arrow">
+        <path d="M755 652 H870" fill="none" stroke="#f17829" stroke-width="15" stroke-linecap="round"/>
+        <path d="M870 625 L925 652 L870 679 Z" fill="#f17829"/>
+      </g>
+    </g>
+
+    <g id="pump" transform="translate(72 608)" filter="url(#smallShadow)">
+      <rect x="0" y="42" width="160" height="84" rx="18" fill="url(#pumpGreen)" stroke="#175b35" stroke-width="5"/>
+      <rect x="20" y="25" width="112" height="27" rx="9" fill="#329d58" stroke="#175b35" stroke-width="4"/>
+      <circle cx="151" cy="84" r="37" fill="#208b4d" stroke="#175b35" stroke-width="5"/>
+      <circle cx="151" cy="84" r="16" fill="#dce5e9" stroke="#5b6d78" stroke-width="4"/>
+      <g stroke="#176b3d" stroke-width="4">
+        <line x1="28" y1="55" x2="28" y2="112"/>
+        <line x1="51" y1="50" x2="51" y2="117"/>
+        <line x1="74" y1="50" x2="74" y2="117"/>
+        <line x1="97" y1="50" x2="97" y2="117"/>
+        <line x1="120" y1="54" x2="120" y2="113"/>
+      </g>
+      <rect x="14" y="127" width="145" height="17" rx="5" fill="#3f4f59"/>
+      <rect x="0" y="143" width="176" height="15" rx="5" fill="#2b3941"/>
+    </g>
+
+    <g id="outlet-valve" transform="translate(770 558)" filter="url(#smallShadow)">
+      <rect x="0" y="53" width="92" height="50" rx="12" fill="#b6c1c8" stroke="#4c5d68" stroke-width="5"/>
+      <path d="M12 53 L46 22 L80 53 Z" fill="#7f8f99" stroke="#4c5d68" stroke-width="5"/>
+      <path d="M12 103 L46 134 L80 103 Z" fill="#7f8f99" stroke="#4c5d68" stroke-width="5"/>
+      <rect x="41" y="-2" width="10" height="32" fill="#4b5b65"/>
+      <ellipse cx="46" cy="-6" rx="31" ry="10" fill="#cb4e36" stroke="#7d2d20" stroke-width="4"/>
+    </g>
+
+    <g id="tank-supports">
+      <path d="M350 724 L320 794 H386 L406 734 Z" fill="url(#steel)" stroke="#4b5c67" stroke-width="5"/>
+      <path d="M650 724 L680 794 H614 L594 734 Z" fill="url(#steel)" stroke="#4b5c67" stroke-width="5"/>
+      <rect x="297" y="790" width="112" height="18" rx="7" fill="#40515c"/>
+      <rect x="591" y="790" width="112" height="18" rx="7" fill="#40515c"/>
+    </g>
+
+    <g id="tank-body" filter="url(#shadow)">
+      <path d="M280 220 C280 157 330 118 390 118 H610 C670 118 720 157 720 220 V655 C720 730 660 775 595 775 H405 C340 775 280 730 280 655 Z" fill="url(#steel)" stroke="#4c5e6b" stroke-width="9"/>
+      <ellipse cx="500" cy="160" rx="220" ry="67" fill="url(#steel)" stroke="#4c5e6b" stroke-width="9"/>
+      <ellipse cx="500" cy="152" rx="185" ry="42" fill="#edf3f6" opacity="0.55"/>
+      <path d="M300 225 C300 175 340 150 390 150 H610 C660 150 700 175 700 225 V650 C700 710 650 745 595 745 H405 C350 745 300 710 300 650 Z" fill="#fff" fill-opacity="0.12" stroke="#667a87" stroke-width="5"/>
+      <path d="M340 220 C350 170 390 150 426 146 V718 C385 712 345 690 340 640 Z" fill="#fff" opacity="0.20"/>
+      <path d="M640 210 C650 176 675 166 690 171 V668 C680 708 650 724 620 730 Z" fill="#20394d" opacity="0.10"/>
+    </g>
+
+    <g id="liquid-layer" clip-path="url(#tankClip)">
+      <rect id="tank-liquid" x="300" y="420" width="400" height="325" fill="url(#water)"/>
+      <ellipse id="liquid-surface" cx="500" cy="420" rx="200" ry="26" fill="#6ed0fa" stroke="#147fbd" stroke-width="4"/>
+      <path id="liquid-highlight" d="M330 440 C390 418 450 432 505 422 C570 410 625 425 675 440 V720 H330 Z" fill="#fff" opacity="0.08"/>
+      <g id="liquid-bubbles" fill="none" stroke="#d5f4ff" stroke-width="4" opacity="0.42">
+        <circle cx="390" cy="555" r="10"/>
+        <circle cx="625" cy="595" r="7"/>
+        <circle cx="520" cy="665" r="12"/>
+        <circle cx="445" cy="495" r="6"/>
+      </g>
+    </g>
+
+    <path id="tank-front-outline" d="M300 225 C300 175 340 150 390 150 H610 C660 150 700 175 700 225 V650 C700 710 650 745 595 745 H405 C350 745 300 710 300 650 Z" fill="none" stroke="#536978" stroke-width="6"/>
+
+    <g id="level-scale" transform="translate(745 220)">
+      <rect x="0" y="0" width="52" height="500" rx="18" fill="#f7fafc" stroke="#526776" stroke-width="5"/>
+      <rect x="17" y="20" width="18" height="460" rx="9" fill="#d6e0e6"/>
+      <g stroke="#344b5c" stroke-width="4">
+        <line x1="35" y1="20" x2="51" y2="20"/>
+        <line x1="35" y1="135" x2="51" y2="135"/>
+        <line x1="35" y1="250" x2="51" y2="250"/>
+        <line x1="35" y1="365" x2="51" y2="365"/>
+        <line x1="35" y1="480" x2="51" y2="480"/>
+      </g>
+      <g font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#263e50">
+        <text x="66" y="30">100%</text>
+        <text x="66" y="145">75%</text>
+        <text x="66" y="260">50%</text>
+        <text x="66" y="375">25%</text>
+        <text x="66" y="489">0%</text>
+      </g>
+      <g id="level-indicator" transform="translate(0 220)">
+        <path d="M-18 0 L12 -14 L12 14 Z" fill="#f2b632" stroke="#9b6d00" stroke-width="3"/>
+      </g>
+    </g>
+
+    <g id="level-sensor" transform="translate(430 72)" filter="url(#smallShadow)">
+      <rect x="0" y="0" width="140" height="60" rx="18" fill="#e9eef1" stroke="#4b5d69" stroke-width="5"/>
+      <rect x="42" y="55" width="56" height="72" rx="10" fill="url(#steel)" stroke="#4b5d69" stroke-width="5"/>
+      <circle cx="70" cy="30" r="15" fill="#28a4d8" stroke="#22617c" stroke-width="4"/>
+    </g>
+
+    <g id="status-indicators" transform="translate(420 815)">
+      <g id="status-enabled"><circle cx="0" cy="0" r="13" fill="#26b65b" stroke="#116b34" stroke-width="4"/></g>
+      <g id="status-sensor-fault" transform="translate(55 0)"><circle cx="0" cy="0" r="13" fill="#d9e1e6" stroke="#667783" stroke-width="4"/></g>
+      <g id="status-pump-available" transform="translate(110 0)"><circle cx="0" cy="0" r="13" fill="#26b65b" stroke="#116b34" stroke-width="4"/></g>
+    </g>
+  </g>
+</svg>
