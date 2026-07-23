@@ -1,0 +1,25 @@
+VALIDAÇÃO DO PROJETO OPENPLC EDITOR v4
+===========================================
+Resultado: APROVADO
+
+Verificações executadas:
+- OK: project.json
+- OK: devices/configuration.json
+- OK: devices/pin-mapping.json
+- OK: devices/remote/PlantaModSim.json
+- OK: devices/servers/SupervisaoModScan.json
+- OK: pous/programs/main.st
+- JSON válido: project.json
+- JSON válido: devices/configuration.json
+- JSON válido: devices/pin-mapping.json
+- JSON válido: devices/remote/PlantaModSim.json
+- JSON válido: devices/servers/SupervisaoModScan.json
+- OK: tarefa cíclica e instância configuradas
+- OK: grupos Modbus do ModSim verificados
+- OK: 38 endereços IEC sem duplicação
+- OK: estrutura do programa ST verificada
+- OK: arquivo .omsim analisado e preservado
+
+Limite da validação:
+- A estrutura e os arquivos foram verificados contra o formato nativo do OpenPLC Editor v4.
+- Não foi executada uma compilação real dentro do aplicativo OpenPLC Editor/Runtime neste ambiente.

@@ -1,0 +1,27 @@
+{
+  "name": "SupervisaoModScan",
+  "protocol": "modbus-tcp",
+  "modbusSlaveConfig": {
+    "enabled": true,
+    "networkInterface": "0.0.0.0",
+    "port": 1503,
+    "bufferMapping": {
+      "holdingRegisters": {
+        "qwCount": 0,
+        "mwCount": 24,
+        "mdCount": 0,
+        "mlCount": 0
+      },
+      "coils": {
+        "qxBits": 0,
+        "mxBits": 0
+      },
+      "discreteInputs": {
+        "ixBits": 0
+      },
+      "inputRegisters": {
+        "iwCount": 0
+      }
+    }
+  }
+}

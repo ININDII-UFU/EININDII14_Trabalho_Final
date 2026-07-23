@@ -1,0 +1,199 @@
+{
+  "name": "PlantaModSim",
+  "protocol": "modbus-tcp",
+  "modbusTcpConfig": {
+    "transport": "tcp",
+    "host": "127.0.0.1",
+    "port": 1502,
+    "timeout": 1000,
+    "slaveId": 1,
+    "ioGroups": [
+      {
+        "id": "read-level",
+        "name": "LeituraNivel",
+        "functionCode": "3",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 1,
+        "errorHandling": "set-to-zero",
+        "ioPoints": [
+          {
+            "id": "level-pv",
+            "name": "NivelPVRaw",
+            "type": "WORD",
+            "iecLocation": "%IW0",
+            "alias": "nivel_pv_raw"
+          }
+        ]
+      },
+      {
+        "id": "write-pump",
+        "name": "EscritaBomba",
+        "functionCode": "6",
+        "cycleTime": 100,
+        "offset": "1",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "pump-command",
+            "name": "BombaCmdRaw",
+            "type": "WORD",
+            "iecLocation": "%QW0",
+            "alias": "bomba_cmd_raw"
+          }
+        ]
+      },
+      {
+        "id": "read-aux",
+        "name": "LeituraAuxiliares",
+        "functionCode": "3",
+        "cycleTime": 200,
+        "offset": "2",
+        "length": 4,
+        "errorHandling": "set-to-zero",
+        "ioPoints": [
+          {
+            "id": "valve-command",
+            "name": "ValvulaSaidaRaw",
+            "type": "WORD",
+            "iecLocation": "%IW1",
+            "alias": "valvula_saida_raw"
+          },
+          {
+            "id": "flow-in",
+            "name": "VazaoEntradaRaw",
+            "type": "WORD",
+            "iecLocation": "%IW2",
+            "alias": "vazao_entrada_raw"
+          },
+          {
+            "id": "flow-out",
+            "name": "VazaoSaidaRaw",
+            "type": "WORD",
+            "iecLocation": "%IW3",
+            "alias": "vazao_saida_raw"
+          },
+          {
+            "id": "plant-status",
+            "name": "PlantaStatusRaw",
+            "type": "WORD",
+            "iecLocation": "%IW4",
+            "alias": "planta_status_raw"
+          }
+        ]
+      },
+      {
+        "id": "read-coils",
+        "name": "LeituraEstadosPlanta",
+        "functionCode": "1",
+        "cycleTime": 200,
+        "offset": "0",
+        "length": 4,
+        "errorHandling": "set-to-zero",
+        "ioPoints": [
+          {
+            "id": "plant-enabled-feedback",
+            "name": "PlantaEnableFb",
+            "type": "BOOL",
+            "iecLocation": "%IX0.0",
+            "alias": "planta_enable_fb"
+          },
+          {
+            "id": "plant-reset-feedback",
+            "name": "PlantaResetFb",
+            "type": "BOOL",
+            "iecLocation": "%IX0.1",
+            "alias": "planta_reset_fb"
+          },
+          {
+            "id": "sensor-fault-feedback",
+            "name": "FalhaSensorFb",
+            "type": "BOOL",
+            "iecLocation": "%IX0.2",
+            "alias": "falha_sensor_fb"
+          },
+          {
+            "id": "pump-available-feedback",
+            "name": "BombaDisponivelFb",
+            "type": "BOOL",
+            "iecLocation": "%IX0.3",
+            "alias": "bomba_disponivel_fb"
+          }
+        ]
+      },
+      {
+        "id": "write-enable",
+        "name": "ComandoEnablePlanta",
+        "functionCode": "5",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "plant-enable-command",
+            "name": "PlantaEnableCmd",
+            "type": "BOOL",
+            "iecLocation": "%QX0.0",
+            "alias": "planta_enable_cmd"
+          }
+        ]
+      },
+      {
+        "id": "write-reset",
+        "name": "ComandoResetPlanta",
+        "functionCode": "5",
+        "cycleTime": 100,
+        "offset": "1",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "plant-reset-command",
+            "name": "PlantaResetCmd",
+            "type": "BOOL",
+            "iecLocation": "%QX0.1",
+            "alias": "planta_reset_cmd"
+          }
+        ]
+      },
+      {
+        "id": "write-sensor-fault",
+        "name": "ComandoFalhaSensor",
+        "functionCode": "5",
+        "cycleTime": 100,
+        "offset": "2",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "sensor-fault-command",
+            "name": "FalhaSensorCmd",
+            "type": "BOOL",
+            "iecLocation": "%QX0.2",
+            "alias": "falha_sensor_cmd"
+          }
+        ]
+      },
+      {
+        "id": "write-pump-available",
+        "name": "ComandoBombaDisponivel",
+        "functionCode": "5",
+        "cycleTime": 100,
+        "offset": "3",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "pump-available-command",
+            "name": "BombaDisponivelCmd",
+            "type": "BOOL",
+            "iecLocation": "%QX0.3",
+            "alias": "bomba_disponivel_cmd"
+          }
+        ]
+      }
+    ]
+  }
+}

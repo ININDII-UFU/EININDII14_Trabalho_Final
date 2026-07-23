@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "name": "ControleNivelPID",
+    "type": "plc-project"
+  },
+  "data": {
+    "dataTypes": [],
+    "pous": [],
+    "configuration": {
+      "resource": {
+        "tasks": [
+          {
+            "name": "task0",
+            "triggering": "Cyclic",
+            "interval": "T#100ms",
+            "priority": 1
+          }
+        ],
+        "instances": [
+          {
+            "name": "instance0",
+            "program": "main",
+            "task": "task0"
+          }
+        ],
+        "globalVariables": []
+      }
+    },
+    "libraries": [],
+    "debugVariables": {
+      "pous": {
+        "main": [
+          "NivelPVRaw",
+          "BombaCmdRaw",
+          "SpRaw",
+          "KpRaw",
+          "KiRaw",
+          "KdRaw",
+          "PvMonitorRaw",
+          "OutMonitorRaw",
+          "ErroMonitorRaw",
+          "ControlStatus"
+        ]
+      }
+    }
+  }
+}

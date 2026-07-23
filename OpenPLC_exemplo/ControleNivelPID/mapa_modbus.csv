@@ -1,0 +1,25 @@
+﻿Sistema;Endereço;Offset;Variável;IEC;Acesso;Escala
+ModSim;40001;0;NivelPVRaw;%IW0;Leitura;0..10000
+ModSim;40002;1;BombaCmdRaw;%QW0;Escrita;0..10000
+ModSim;40003;2;ValvulaSaidaRaw;%IW1;Leitura;0..10000
+ModSim;40004;3;VazaoEntradaRaw;%IW2;Leitura;0..10000
+ModSim;40005;4;VazaoSaidaRaw;%IW3;Leitura;0..10000
+ModSim;40006;5;PlantaStatusRaw;%IW4;Leitura;bits
+ModScan;40001;0;SpRaw;%MW0;R/W;0..10000
+ModScan;40002;1;KpRaw;%MW1;R/W;x100
+ModScan;40003;2;KiRaw;%MW2;R/W;x1000
+ModScan;40004;3;KdRaw;%MW3;R/W;x100
+ModScan;40005;4;ManualOutRaw;%MW4;R/W;0..10000
+ModScan;40006;5;AutoModeRaw;%MW5;R/W;0/1
+ModScan;40007;6;ControleEnableRaw;%MW6;R/W;0/1
+ModScan;40008;7;ResetPlantaRaw;%MW7;W;pulso
+ModScan;40009;8;FalhaSensorCmdRaw;%MW8;R/W;0/1
+ModScan;40010;9;BombaDisponivelCmdRaw;%MW9;R/W;0/1
+ModScan;40011;10;PvMonitorRaw;%MW10;R;0..10000
+ModScan;40012;11;OutMonitorRaw;%MW11;R;0..10000
+ModScan;40013;12;ErroMonitorRaw;%MW12;R;INT x100
+ModScan;40014;13;ControlStatus;%MW13;R;bits
+ModScan;40015;14;ValvulaMonitorRaw;%MW14;R;0..10000
+ModScan;40016;15;QinMonitorRaw;%MW15;R;0..10000
+ModScan;40017;16;QoutMonitorRaw;%MW16;R;0..10000
+ModScan;40018;17;PlantStatusMonitor;%MW17;R;bits

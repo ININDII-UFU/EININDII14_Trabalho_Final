@@ -1,0 +1,2 @@
+Extraia o pacote. No OpenPLC Editor, abra a pasta ControleNivelPID.
+Não selecione o ZIP, o project.json ou o arquivo main.st isoladamente.
