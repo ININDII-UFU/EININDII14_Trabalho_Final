@@ -1,0 +1,35 @@
+{
+  "compatibilidade_alvo": {
+    "aplicacao": "Open ModSim 2",
+    "versao_do_arquivo_base": "2.0.0-rc1",
+    "formato": ".omsim XML"
+  },
+  "servidor_modbus": {
+    "protocolo": "Modbus TCP",
+    "ip_escuta": "0.0.0.0",
+    "ip_cliente_mesmo_computador": "127.0.0.1",
+    "porta": 1502,
+    "unit_id": 1,
+    "enderecamento_cliente": "offset zero-based"
+  },
+  "execucao_script": {
+    "modo": "Periodically",
+    "intervalo_ms": 500,
+    "run_on_startup": true
+  },
+  "modelo": {
+    "nivel_inicial_pct": 25.0,
+    "bomba_inicial_pct": 20.0,
+    "valvula_saida_inicial_pct": 40.0,
+    "tau_bomba_s": 2.5,
+    "ganho_nivel_pct_por_fluxo_s": 0.025,
+    "equacao_vazao_saida": "Qout_pct = abertura_pct * sqrt(nivel_pct/100)"
+  },
+  "escalas": {
+    "analogica_raw_min": 0,
+    "analogica_raw_max": 10000,
+    "analogica_eng_min_pct": 0.0,
+    "analogica_eng_max_pct": 100.0,
+    "falha_sensor_raw": 65535
+  }
+}

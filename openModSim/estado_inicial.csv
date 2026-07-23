@@ -1,0 +1,10 @@
+﻿variavel;valor;interpretacao
+NIVEL_PV_RAW;2500;25,00%
+BOMBA_CMD_RAW;2000;20,00%
+VALVULA_SAIDA_CMD_RAW;4000;40,00%
+VAZAO_ENTRADA_RAW;2000;20,00%
+VAZAO_SAIDA_RAW;2000;20,00% aproximadamente
+PLANTA_ENABLE;1;planta habilitada
+PLANTA_RESET;0;sem reset
+FALHA_SENSOR_SIM;0;sensor normal
+BOMBA_DISPONIVEL_SIM;1;bomba disponível

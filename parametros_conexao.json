@@ -1,0 +1,28 @@
+{
+  "plant": {
+    "name": "PLANTA_NIVEL",
+    "protocol": "Modbus TCP",
+    "host": "127.0.0.1",
+    "port": 1502,
+    "unit_id": 1
+  },
+  "openplc_server": {
+    "protocol": "Modbus TCP",
+    "host": "127.0.0.1",
+    "port": 1503,
+    "unit_id": 1
+  },
+  "pid": {
+    "cycle_ms": 100,
+    "kp": 2.0,
+    "tr_s": 12.0,
+    "td_s": 0.0,
+    "manual_output_pct": 30.0
+  },
+  "scaling": {
+    "percent_raw_min": 0,
+    "percent_raw_max": 10000,
+    "percent_eng_min": 0.0,
+    "percent_eng_max": 100.0
+  }
+}

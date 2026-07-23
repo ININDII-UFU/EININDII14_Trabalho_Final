@@ -1,0 +1,4 @@
+﻿ordem;nome_do_canal;funcao_modbus;offset;quantidade;variavel_openplc;direcao;periodo_sugerido_ms
+1;Ler sinais da planta;03 Read Holding Registers;0;6;bloco contínuo HR0..HR5;OpenModSim -> OpenPLC;100
+2;Escrever bomba e válvula;16 Write Multiple Registers;1;2;"BOMBA_CMD_RAW; VALVULA_SAIDA_CMD_RAW";OpenPLC -> OpenModSim;100
+3;Ler/escrever comandos da planta;01/05/15 Coils;0;4;"PLANTA_ENABLE; PLANTA_RESET; FALHA_SENSOR_SIM; BOMBA_DISPONIVEL_SIM";bidirecional conforme variável;100

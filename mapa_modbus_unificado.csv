@@ -1,0 +1,33 @@
+interface,area,offset,address_notation,name,iec_type,scale,access,description
+OpenModSim,Holding Register,0,40001,NIVEL_PV_RAW,UINT,0..10000 = 0..100.00%,R,Nível medido
+OpenModSim,Holding Register,1,40002,BOMBA_CMD_RAW,UINT,0..10000 = 0..100.00%,W,Comando da bomba
+OpenModSim,Holding Register,2,40003,VALVULA_SAIDA_CMD_RAW,UINT,0..10000 = 0..100.00%,W,Distúrbio/abertura de saída
+OpenModSim,Holding Register,3,40004,VAZAO_ENTRADA_RAW,UINT,0..10000 = 0..100.00%,R,Vazão de entrada
+OpenModSim,Holding Register,4,40005,VAZAO_SAIDA_RAW,UINT,0..10000 = 0..100.00%,R,Vazão de saída
+OpenModSim,Holding Register,5,40006,PLANTA_STATUS_WORD,UINT,bits,R,Estado da planta
+OpenModSim,Coil,0,00001,PLANTA_ENABLE,BOOL,0/1,W,Habilita planta
+OpenModSim,Coil,1,00002,PLANTA_RESET,BOOL,0/1,W,Reset da planta
+OpenModSim,Coil,2,00003,FALHA_SENSOR_SIM,BOOL,0/1,W,Injeção de falha
+OpenModSim,Coil,3,00004,BOMBA_DISPONIVEL_SIM,BOOL,0/1,W,Disponibilidade da bomba
+OpenPLC_Server,Holding Register,0,40001,NIVEL_PV_RAW,UINT16,0..10000 = 0..100.00%,R,PV publicada
+OpenPLC_Server,Holding Register,1,40002,NIVEL_SP_RAW,UINT16,0..10000 = 0..100.00%,RW,SP remoto
+OpenPLC_Server,Holding Register,2,40003,BOMBA_CMD_RAW,UINT16,0..10000 = 0..100.00%,R,MV publicada
+OpenPLC_Server,Holding Register,3,40004,PID_KP_RAW,UINT16,x100,RW,Ganho
+OpenPLC_Server,Holding Register,4,40005,PID_TR_RAW,UINT16,x10 s,RW,Tempo integral
+OpenPLC_Server,Holding Register,5,40006,PID_TD_RAW,UINT16,x10 s,RW,Tempo derivativo
+OpenPLC_Server,Holding Register,6,40007,VAZAO_ENTRADA_RAW,UINT16,0..10000,R,Vazão entrada
+OpenPLC_Server,Holding Register,7,40008,VAZAO_SAIDA_RAW,UINT16,0..10000,R,Vazão saída
+OpenPLC_Server,Holding Register,8,40009,PID_XOUT_RAW,UINT16,0..10000,R,Saída bruta PID
+OpenPLC_Server,Holding Register,9,40010,BOMBA_CMD_LIMITADO_RAW,UINT16,0..10000,R,Saída final
+OpenPLC_Server,Coil,0,00001,CMD_START,BOOL,0/1,W,Start
+OpenPLC_Server,Coil,1,00002,CMD_STOP,BOOL,0/1,W,Stop
+OpenPLC_Server,Coil,2,00003,CMD_AUTO,BOOL,0/1,W,Auto
+OpenPLC_Server,Coil,3,00004,CMD_RESET_ALARME,BOOL,0/1,W,Reset
+OpenPLC_Server,Coil,4,00005,ESTADO_RUN,BOOL,0/1,R,Run
+OpenPLC_Server,Coil,5,00006,MODO_AUTO,BOOL,0/1,R,Modo auto
+OpenPLC_Server,Coil,6,00007,ALARME_HH,BOOL,0/1,R,Alarme HH
+OpenPLC_Server,Coil,7,00008,ALARME_LL,BOOL,0/1,R,Alarme LL
+OpenPLC_Server,Coil,8,00009,INTERTRAVAMENTO_ATIVO,BOOL,0/1,R,Intertravamento
+OpenPLC_Server,Coil,9,00010,COM_PLANTA_OK,BOOL,0/1,R,Comunicação OK
+OpenPLC_Server,Coil,10,00011,PID_SATURADO,BOOL,0/1,R,Saturação
+OpenPLC_Server,Coil,11,00012,FALHA_SENSOR,BOOL,0/1,R,Falha sensor
