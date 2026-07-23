@@ -1,0 +1,39 @@
+{
+  "note": "Arquivo de referencia. No Editor v4, crie o Remote Device pela interface para que o editor gere o JSON nativo da versao instalada.",
+  "device": {
+    "name": "PlantaNivelModSim",
+    "protocol": "modbus_tcp",
+    "host": "127.0.0.1",
+    "port": 1502,
+    "unit_id": 1,
+    "timeout_ms": 1000
+  },
+  "io_groups": [
+    {
+      "name": "LeituraNivel",
+      "function_code": 3,
+      "cycle_ms": 100,
+      "offset": 0,
+      "length": 1,
+      "local_start": "%IW0",
+      "error_handling": "set_zero"
+    },
+    {
+      "name": "EscritaBomba",
+      "function_code": 6,
+      "cycle_ms": 100,
+      "offset": 1,
+      "length": 1,
+      "local_start": "%QW0"
+    },
+    {
+      "name": "LeituraDiagnosticos",
+      "function_code": 3,
+      "cycle_ms": 500,
+      "offset": 2,
+      "length": 4,
+      "local_start": "%IW1",
+      "error_handling": "keep_last"
+    }
+  ]
+}

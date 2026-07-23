@@ -1,0 +1,49 @@
+{
+  "name": "Sintonia FUXA Genérica com AutoSintonia",
+  "version": "3.0.0",
+  "entrypoint": "resources/pid-tuning/index.html",
+  "clientScript": "fuxa_scripts/AbrirSintoniaPID_GENERICO_CLIENT.js",
+  "requiredScriptParameters": [
+    "tagPV",
+    "tagSP",
+    "tagMV"
+  ],
+  "optionalTagParameters": [
+    "tagAuto",
+    "tagLocal",
+    "tagKp",
+    "tagTi",
+    "tagTd"
+  ],
+  "optionalValueParameters": [
+    "titulo",
+    "unidadePV",
+    "unidadeMV",
+    "escalaPVMin",
+    "escalaPVMax",
+    "escalaMVMin",
+    "escalaMVMax",
+    "periodoMs",
+    "largura",
+    "altura",
+    "dispositivo",
+    "metodoSintonia",
+    "tipoControlador",
+    "lambdaSintonia"
+  ],
+  "requiredClientAccess": [
+    "$getTag",
+    "$setTag",
+    "$getTagId"
+  ],
+  "features": [
+    "generic-tag-parameters",
+    "original-tangent-tool",
+    "step-response-identification",
+    "fopdt-model",
+    "ziegler-nichols",
+    "cohen-coon",
+    "imc-simc",
+    "optional-parameter-writeback"
+  ]
+}

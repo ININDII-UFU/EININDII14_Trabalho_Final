@@ -1,0 +1,4 @@
+Equipamento,Direcao,Funcao,Offset_wire,Endereco_exibido,Comprimento,IEC_local,Alias,Escala
+ModSim,Leitura,FC03 Holding Registers,0,40001,1,%IW0,NivelRaw,0..10000 = 0..100%; 65535=falha
+ModSim,Escrita,FC06 Write Single Register,1,40002,1,%QW0,BombaCmdRaw,0..10000 = 0..100%
+ModSim,Leitura,FC03 Holding Registers,2,40003,4,%IW1..%IW4,Diagnosticos,HR2 valvula; HR3 Qin; HR4 Qout; HR5 status

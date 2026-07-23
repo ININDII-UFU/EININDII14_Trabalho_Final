@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#eef3f6"/>
+  <foreignObject x="0" y="0" width="1280" height="720">
+    <xhtml:div style="width:1280px;height:720px;margin:0;overflow:hidden;background:#eef3f6;">
+      <xhtml:iframe
+        title="Tela de Sintonia PID"
+        src="/resources/pid-tuning/index.html?title=N%C3%ADvel%20do%20Tanque&amp;device=OpenPLC_Nivel&amp;sp=NIVEL_SP_PCT&amp;pv=NIVEL_PV_PCT&amp;mv=BOMBA_MV_PCT&amp;am=PID_AUTO&amp;lr=COMANDO_LOCAL&amp;kp=PID_KP&amp;ti=PID_TI_S&amp;td=PID_TD_S&amp;units=%25&amp;period=500"
+        style="width:100%;height:100%;border:0;display:block;background:#eef3f6;"
+        scrolling="no">
+      </xhtml:iframe>
+    </xhtml:div>
+  </foreignObject>
+</svg>

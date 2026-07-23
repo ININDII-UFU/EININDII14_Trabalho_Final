@@ -1,0 +1,9 @@
+﻿nome_no_fuxa;finalidade;tipo_recomendado;acesso;convencao;observacao
+NIVEL_SP_PCT;Setpoint da malha de nível;REAL/FLOAT;R/W;0..100 %;Pode ser escalado a partir de 0..10000
+NIVEL_PV_PCT;Nível medido;REAL/FLOAT;R;0..100 %;Origem: PV processada no OpenPLC
+BOMBA_MV_PCT;Comando da bomba;REAL/FLOAT;R/W;0..100 %;Escrita permitida apenas em Manual
+PID_AUTO;Modo automático/manual;BOOL;R/W;"1=Auto; 0=Manual";Convenção usada pela tela
+COMANDO_LOCAL;Seleção local/remota;BOOL;R/W;"1=Local; 0=Remoto";Em Local, SP pode ser escrito na tela
+PID_KP;Ganho proporcional;REAL/FLOAT;R/W;valor real;Opcional
+PID_TI_S;Tempo integral;REAL/FLOAT;R/W;segundos;Opcional
+PID_TD_S;Tempo derivativo;REAL/FLOAT;R/W;segundos;Opcional

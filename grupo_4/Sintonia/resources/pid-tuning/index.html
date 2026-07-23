@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Sintonia PID — FUXA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="screen" id="pid-screen">
+    <header class="screen-header">
+      <div>
+        <span class="eyebrow">FUXA • CONTROLE DE PROCESSOS</span>
+        <h1 id="screen-title">Tela de Sintonia da Malha de Nível</h1>
+      </div>
+      <div class="connection" aria-live="polite">
+        <span id="connection-dot" class="connection-dot connection-dot--waiting"></span>
+        <div>
+          <strong id="connection-label">Inicializando</strong>
+          <small id="connection-detail">Aguardando comunicação com o FUXA</small>
+        </div>
+      </div>
+    </header>
+
+    <section class="controller-body">
+      <aside class="controller-display" aria-label="Valores e comandos da malha">
+        <h2>VALORES ATUAIS</h2>
+
+        <div class="value-group">
+          <label for="pv-value">PV — Variável de processo</label>
+          <div class="input-with-unit">
+            <input id="pv-value" class="value-input" type="number" value="0.0" step="0.01" disabled>
+            <span id="pv-unit">%</span>
+          </div>
+        </div>
+
+        <div class="value-group">
+          <label for="sp-value">SP — Setpoint</label>
+          <div class="input-with-unit">
+            <input id="sp-value" class="value-input" type="number" value="50.0" step="0.1" min="0" max="100">
+            <span id="sp-unit">%</span>
+          </div>
+          <div class="segmented" id="access-selector" role="group" aria-label="Seleção local ou remota">
+            <button id="btn-local" type="button">Local</button>
+            <button id="btn-remote" type="button">Remoto</button>
+          </div>
+        </div>
+
+        <div class="value-group">
+          <label for="mv-value">MV — Variável manipulada</label>
+          <div class="input-with-unit">
+            <input id="mv-value" class="value-input" type="number" value="0.0" step="0.1" min="0" max="100" disabled>
+            <span id="mv-unit">%</span>
+          </div>
+          <div class="step-row">
+            <label for="step-value">Passo A</label>
+            <input id="step-value" type="number" value="10" min="0.01" max="100" step="0.1">
+            <button id="btn-step-plus" class="small-button" type="button">A+</button>
+            <button id="btn-step-minus" class="small-button" type="button">A−</button>
+          </div>
+          <div class="segmented" id="mode-selector" role="group" aria-label="Seleção automática ou manual">
+            <button id="btn-auto" type="button">Auto</button>
+            <button id="btn-manual" type="button">Manual</button>
+          </div>
+        </div>
+
+        <section id="pid-parameters" class="pid-parameters">
+          <div class="section-title-row">
+            <h3>PARÂMETROS PID</h3>
+            <span class="optional-badge">opcionais</span>
+          </div>
+          <div class="pid-grid">
+            <label>Kp<input id="kp-value" type="number" step="0.01"></label>
+            <label>Ti (s)<input id="ti-value" type="number" step="0.01" min="0"></label>
+            <label>Td (s)<input id="td-value" type="number" step="0.01" min="0"></label>
+          </div>
+          <button id="btn-apply-pid" class="primary-button" type="button">Aplicar parâmetros</button>
+        </section>
+
+
+        <section id="autotune-panel" class="autotune-panel">
+          <div class="section-title-row">
+            <h3>SINTONIA POR RESPOSTA AO DEGRAU</h3>
+            <span class="optional-badge">automática</span>
+          </div>
+
+          <div class="autotune-controls">
+            <label>
+              Método
+              <select id="tuning-method">
+                <option value="imc" selected>IMC / SIMC</option>
+                <option value="zn">Ziegler–Nichols</option>
+                <option value="cc">Cohen–Coon</option>
+              </select>
+            </label>
+            <label>
+              Controlador
+              <select id="tuning-controller">
+                <option value="PI" selected>PI</option>
+                <option value="PID">PID</option>
+              </select>
+            </label>
+            <label id="lambda-field">
+              λ (s)
+              <input id="tuning-lambda" type="number" min="0.01" step="0.1" placeholder="automático">
+            </label>
+          </div>
+
+          <button id="btn-analyze-step" class="secondary-button" type="button">
+            Analisar degrau registrado
+          </button>
+
+          <div id="identified-model" class="identified-model" hidden>
+            <div class="model-grid">
+              <span>ΔMV<strong id="model-du">—</strong></span>
+              <span>ΔPV<strong id="model-dy">—</strong></span>
+              <span>K<strong id="model-k">—</strong></span>
+              <span>L<strong id="model-l">—</strong></span>
+              <span>T<strong id="model-t">—</strong></span>
+              <span>R²<strong id="model-r2">—</strong></span>
+            </div>
+
+            <div class="tuning-result">
+              <span>Kp<strong id="tuned-kp">—</strong></span>
+              <span>Ti<strong id="tuned-ti">—</strong></span>
+              <span>Td<strong id="tuned-td">—</strong></span>
+            </div>
+
+            <small id="tuning-confidence" class="tuning-note"></small>
+            <small id="tuning-warning" class="tuning-warning"></small>
+
+            <div class="tuning-actions">
+              <button id="btn-copy-tuning" class="secondary-button" type="button">
+                Copiar para os campos
+              </button>
+              <button id="btn-apply-tuning" class="primary-button" type="button">
+                Aplicar Kp/Ti/Td
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="sample-row">
+          <label for="division-time">Período de amostragem</label>
+          <select id="division-time">
+            <option value="500">0,5 s</option>
+            <option value="1000" selected>1 s</option>
+            <option value="2000">2 s</option>
+            <option value="3000">3 s</option>
+            <option value="5000">5 s</option>
+          </select>
+        </div>
+      </aside>
+
+      <section class="controller-graph" aria-label="Gráfico de controle">
+        <div class="graph-title-row">
+          <h2>GRÁFICO DE CONTROLE</h2>
+          <span id="sample-counter">0 amostras</span>
+        </div>
+
+        <div class="toolbar" id="toolbar">
+          <button id="tb-run" type="button" title="Pausar aquisição" aria-label="Pausar aquisição">
+            <svg viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+          </button>
+          <button id="tb-home" type="button" title="Reenquadrar gráfico" aria-label="Reenquadrar gráfico">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          </button>
+          <button id="tb-pan" type="button" title="Mover gráfico" aria-label="Mover gráfico">
+            <svg viewBox="0 0 24 24"><path d="M9 11V2h2v9h1V4h2v7h1V6h2v5.5l.5.5H22v2h-3.09l-1.41 6.59A2 2 0 0 1 15.55 22H9a2 2 0 0 1-2-2v-7h2z"/></svg>
+          </button>
+          <button id="tb-zoom" type="button" title="Zoom" aria-label="Zoom">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+          </button>
+          <button id="tb-cv" type="button" title="Cursores verticais — Δt" aria-label="Cursores verticais">
+            <svg viewBox="0 0 24 24"><path d="M11 3h2v18h-2z"/></svg>
+          </button>
+          <button id="tb-ch" type="button" title="Cursores horizontais — ΔPV e ΔMV" aria-label="Cursores horizontais">
+            <svg viewBox="0 0 24 24"><path d="M3 11h18v2H3z"/></svg>
+          </button>
+          <button id="tb-kp" type="button" title="Tangente para análise de ganho" aria-label="Tangente para análise de ganho">
+            <svg viewBox="0 0 24 24"><path d="M3 17h2l3.5-6 4 7 3-5 3.5 4H21l-5-7-3 5-4-7L5 17z"/></svg>
+          </button>
+          <button id="tb-clear-cursors" type="button" title="Limpar cursores" aria-label="Limpar cursores">
+            <svg viewBox="0 0 24 24"><path d="M16 14l-6-6 1.41-1.41L17.41 12 16 14zm3.3-9.9-1.4-1.4-2.1 2.1-1.5-1.5-1.4 1.4 1.5 1.5L5 19v2h2l9.9-9.9 1.5 1.5 1.4-1.4-1.5-1.5 2.1-2.1z"/></svg>
+          </button>
+          <button id="tb-clear" type="button" title="Limpar histórico" aria-label="Limpar histórico">
+            <svg viewBox="0 0 24 24"><path d="M16 11V7H8v4H2l10 9 10-9h-6zM16 5V3H8v2h8z"/></svg>
+          </button>
+
+          <div class="pillbox" aria-live="polite">
+            <span class="pill" id="pill-dt"></span>
+            <span class="pill" id="pill-dpv"></span>
+            <span class="pill" id="pill-dmv"></span>
+          </div>
+        </div>
+
+        <div id="plot-box"></div>
+
+        <footer class="graph-footer">
+          <div class="trace-switches">
+            <label><input type="checkbox" id="chk-pv" checked> PV</label>
+            <label><input type="checkbox" id="chk-sp" checked> SP</label>
+            <label><input type="checkbox" id="chk-mv" checked> MV</label>
+          </div>
+          <div id="message-bar" class="message-bar" aria-live="polite"></div>
+        </footer>
+      </section>
+    </section>
+  </main>
+
+  <script src="plotly-2.30.0.min.js"></script>
+  <script src="fuxa-adapter.js"></script>
+  <script src="pid-autotune.js"></script>
+  <script src="pid-tuning.js"></script>
+</body>
+</html>

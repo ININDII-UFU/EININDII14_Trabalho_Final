@@ -1,0 +1,17 @@
+﻿parametro;valor_na_chamada_do_botao
+tagPV;selecionar a tag NIVEL_PV_PCT
+tagSP;selecionar a tag NIVEL_SP_PCT
+tagMV;selecionar a tag BOMBA_MV_PCT
+tagAuto;selecionar a tag PID_AUTO
+tagLocal;selecionar a tag COMANDO_LOCAL
+tagKp;selecionar a tag PID_KP
+tagTi;selecionar a tag PID_TI_S
+tagTd;selecionar a tag PID_TD_S
+titulo;Nível do Tanque
+unidadePV;%
+unidadeMV;%
+escalaPVMin;0
+escalaPVMax;100
+escalaMVMin;0
+escalaMVMax;100
+periodoMs;500

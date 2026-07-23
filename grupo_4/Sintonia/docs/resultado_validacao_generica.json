@@ -1,0 +1,17 @@
+{
+  "node_available": true,
+  "javascript": {
+    "AbrirSintoniaPID_GENERICO_CLIENT.js": "ok",
+    "fuxa-adapter.js": "ok",
+    "pid-tuning.js": "ok"
+  },
+  "svg_xml": "ok",
+  "required_files": {
+    "fuxa_scripts/AbrirSintoniaPID_GENERICO_CLIENT.js": true,
+    "resources/pid-tuning/index.html": true,
+    "resources/pid-tuning/fuxa-adapter.js": true,
+    "resources/pid-tuning/pid-tuning.js": true,
+    "docs/PARAMETROS_DO_SCRIPT.csv": true,
+    "docs/GUIA_TELA_GENERICA.md": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "javascript_syntax": {
+    "pid-autotune.js": "ok",
+    "pid-tuning.js": "ok",
+    "fuxa-adapter.js": "ok",
+    "AbrirSintoniaPID_GENERICO_CLIENT.js": "ok"
+  },
+  "synthetic_fopdt_test": {
+    "identified": {
+      "K": 1.9958682730071353,
+      "L": 3.009521757283702,
+      "T": 9.960824789258647,
+      "r2": 0.9999549825407804
+    },
+    "znPid": {
+      "method": "zn",
+      "controller": "PID",
+      "kp": 1.9899730051445994,
+      "ti": 6.019043514567404,
+      "td": 1.504760878641851,
+      "lambda": 4.980412394629323,
+      "action": "ganho positivo para erro SP − PV",
+      "warning": "Sintonia agressiva. Valide com limites, anti-windup e operação segura."
+    },
+    "imcPi": {
+      "method": "imc",
+      "controller": "PI",
+      "kp": 0.45330965832884446,
+      "ti": 9.960824789258647,
+      "td": 0,
+      "lambda": 8,
+      "action": "ganho positivo para erro SP − PV",
+      "warning": "Sintonia conservadora; aumente λ para uma resposta mais lenta e robusta."
+    }
+  },
+  "files": {
+    "pid-autotune.js": true,
+    "index.html": true,
+    "pid-tuning.js": true,
+    "generic_launcher": true
+  }
+}

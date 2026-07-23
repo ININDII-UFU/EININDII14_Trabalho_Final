@@ -1,0 +1,23 @@
+﻿nome;tipo_no_FUXA;obrigatorio;descricao;exemplo_nivel
+tagPV;Tag ID;sim;Variável de processo;NIVEL_PV_PCT
+tagSP;Tag ID;sim;Setpoint;NIVEL_SP_PCT
+tagMV;Tag ID;sim;Variável manipulada;BOMBA_MV_PCT
+tagAuto;Tag ID;não;"1=automático; 0=manual";PID_AUTO
+tagLocal;Tag ID;não;"1=local; 0=remoto";COMANDO_LOCAL
+tagKp;Tag ID;não;Ganho proporcional;PID_KP
+tagTi;Tag ID;não;Tempo integral;PID_TI_S
+tagTd;Tag ID;não;Tempo derivativo;PID_TD_S
+titulo;Value;não;Nome apresentado na janela;Nível do Tanque
+unidadePV;Value;não;Unidade de PV e SP;%
+unidadeMV;Value;não;Unidade da MV;%
+escalaPVMin;Value;não;Limite inferior de PV/SP;0
+escalaPVMax;Value;não;Limite superior de PV/SP;100
+escalaMVMin;Value;não;Limite inferior da MV;0
+escalaMVMax;Value;não;Limite superior da MV;100
+periodoMs;Value;não;Amostragem entre 500 e 10000 ms;500
+largura;Value;não;Largura inicial da janela;1180
+altura;Value;não;Altura inicial da janela;690
+dispositivo;Value;não;"Nome do dispositivo; necessário somente quando forem passados nomes em vez de IDs";OpenPLC_Nivel
+metodoSintonia;Value;não;imc, zn ou cc;imc
+tipoControlador;Value;não;PI ou PID;PI
+lambdaSintonia;Value;não;"Constante de robustez IMC; vazio usa cálculo automático";

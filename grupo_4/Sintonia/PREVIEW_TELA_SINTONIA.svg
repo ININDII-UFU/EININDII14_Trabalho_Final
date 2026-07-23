@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef3f6"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#183246"/><stop offset=".7" stop-color="#29546a"/><stop offset="1" stop-color="#1e655f"/></linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#203746"/><stop offset="1" stop-color="#172d3a"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#18303f" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <rect x="14" y="14" width="1252" height="76" rx="14" fill="url(#head)" filter="url(#shadow)"/>
+    <text x="34" y="39" fill="#a8e8dc" font-size="11" font-weight="700" letter-spacing="2">FUXA • CONTROLE DE PROCESSOS</text>
+    <text x="34" y="69" fill="#ffffff" font-size="27" font-weight="700">Tela de Sintonia da Malha Nível do Tanque</text>
+    <rect x="1000" y="27" width="245" height="50" rx="10" fill="#ffffff" fill-opacity=".1"/>
+    <circle cx="1022" cy="52" r="7" fill="#32d178"/>
+    <text x="1040" y="49" fill="#ffffff" font-size="13" font-weight="700">Demonstração</text>
+    <text x="1040" y="65" fill="#d6e5ec" font-size="10">Modo de demonstração local</text>
+
+    <rect x="14" y="102" width="300" height="604" rx="14" fill="url(#left)" filter="url(#shadow)"/>
+    <text x="164" y="132" text-anchor="middle" fill="#5fe0c5" font-size="14" font-weight="700">VALORES ATUAIS</text>
+
+    <g transform="translate(31,151)">
+      <text x="0" y="0" fill="#bdcbd4" font-size="11" font-weight="700">PV — Variável de processo</text>
+      <rect x="0" y="9" width="266" height="43" rx="7" fill="#071924" fill-opacity=".55" stroke="#48606e"/>
+      <text x="230" y="39" text-anchor="end" fill="#99a9b3" font-size="20" font-weight="700">46.82</text><text x="246" y="39" fill="#5fe0c5" font-size="14" font-weight="700">%</text>
+
+      <text x="0" y="76" fill="#bdcbd4" font-size="11" font-weight="700">SP — Setpoint</text>
+      <rect x="0" y="85" width="266" height="43" rx="7" fill="#071924" fill-opacity=".55" stroke="#5fe0c5"/>
+      <text x="230" y="115" text-anchor="end" fill="#66e4ca" font-size="20" font-weight="700">50.00</text><text x="246" y="115" fill="#5fe0c5" font-size="14" font-weight="700">%</text>
+      <rect x="0" y="136" width="129" height="31" rx="7" fill="#16b89a"/><rect x="137" y="136" width="129" height="31" rx="7" fill="none" stroke="#6e8796"/>
+      <text x="64" y="156" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Local</text><text x="201" y="156" text-anchor="middle" fill="#d7e2e8" font-size="11" font-weight="700">Remoto</text>
+
+      <text x="0" y="194" fill="#bdcbd4" font-size="11" font-weight="700">MV — Variável manipulada</text>
+      <rect x="0" y="203" width="266" height="43" rx="7" fill="#071924" fill-opacity=".55" stroke="#48606e"/>
+      <text x="230" y="233" text-anchor="end" fill="#99a9b3" font-size="20" font-weight="700">23.17</text><text x="246" y="233" fill="#5fe0c5" font-size="14" font-weight="700">%</text>
+      <text x="0" y="269" fill="#bdcbd4" font-size="11" font-weight="700">Passo A</text>
+      <rect x="54" y="250" width="83" height="31" rx="7" fill="#071924" fill-opacity=".55" stroke="#4f7183"/><text x="126" y="270" text-anchor="end" fill="#66e4ca" font-size="12">10</text>
+      <rect x="145" y="250" width="56" height="31" rx="7" fill="none" stroke="#6e8796"/><rect x="209" y="250" width="57" height="31" rx="7" fill="none" stroke="#6e8796"/>
+      <text x="173" y="270" text-anchor="middle" fill="#d7e2e8" font-size="11" font-weight="700">A+</text><text x="237" y="270" text-anchor="middle" fill="#d7e2e8" font-size="11" font-weight="700">A−</text>
+      <rect x="0" y="289" width="129" height="31" rx="7" fill="#16b89a"/><rect x="137" y="289" width="129" height="31" rx="7" fill="none" stroke="#6e8796"/>
+      <text x="64" y="309" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Auto</text><text x="201" y="309" text-anchor="middle" fill="#d7e2e8" font-size="11" font-weight="700">Manual</text>
+
+      <rect x="0" y="339" width="266" height="112" rx="10" fill="#ffffff" fill-opacity=".035" stroke="#64b1b4" stroke-opacity=".35"/>
+      <text x="12" y="359" fill="#5fe0c5" font-size="11" font-weight="700">PARÂMETROS PID</text>
+      <g fill="#bdcbd4" font-size="9"><text x="12" y="382">Kp</text><text x="98" y="382">Ti (s)</text><text x="184" y="382">Td (s)</text></g>
+      <g fill="#071924" fill-opacity=".55" stroke="#4f7183"><rect x="12" y="388" width="72" height="27" rx="6"/><rect x="98" y="388" width="72" height="27" rx="6"/><rect x="184" y="388" width="70" height="27" rx="6"/></g>
+      <g fill="#66e4ca" font-size="11" text-anchor="middle"><text x="48" y="406">2.0</text><text x="134" y="406">12.0</text><text x="219" y="406">0.0</text></g>
+      <rect x="12" y="422" width="242" height="23" rx="6" fill="#16b89a"/><text x="133" y="438" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Aplicar parâmetros</text>
+    </g>
+
+    <rect x="326" y="102" width="940" height="604" rx="14" fill="#ffffff" filter="url(#shadow)"/>
+    <text x="344" y="132" fill="#2c4658" font-size="14" font-weight="700">GRÁFICO DE CONTROLE</text><text x="1244" y="132" text-anchor="end" fill="#708391" font-size="10">52 amostras</text>
+    <rect x="340" y="143" width="912" height="45" rx="10" fill="#edf2f5" stroke="#cdd8df"/>
+    <g transform="translate(351,150)" fill="#fff" stroke="#c8d4db">
+      <rect x="0" y="0" width="34" height="31" rx="8"/><rect x="41" y="0" width="34" height="31" rx="8"/><rect x="82" y="0" width="34" height="31" rx="8"/><rect x="123" y="0" width="34" height="31" rx="8"/><rect x="164" y="0" width="34" height="31" rx="8"/><rect x="205" y="0" width="34" height="31" rx="8"/><rect x="246" y="0" width="34" height="31" rx="8"/><rect x="287" y="0" width="34" height="31" rx="8"/><rect x="328" y="0" width="34" height="31" rx="8"/>
+    </g>
+    <g fill="#263238"><rect x="360" y="157" width="4" height="17"/><rect x="369" y="157" width="4" height="17"/><path d="M400 174v-17l13 8.5z"/><circle cx="450" cy="165" r="7" fill="none" stroke="#263238"/><line x1="455" y1="170" x2="461" y2="176" stroke="#263238" stroke-width="2"/></g>
+    <rect x="340" y="199" width="912" height="454" rx="10" fill="#fff" stroke="#c8d4db"/>
+    <g stroke="#e9eef1" stroke-width="1"><line x1="405" y1="230" x2="1190" y2="230"/><line x1="405" y1="315" x2="1190" y2="315"/><line x1="405" y1="400" x2="1190" y2="400"/><line x1="405" y1="485" x2="1190" y2="485"/><line x1="405" y1="570" x2="1190" y2="570"/><line x1="405" y1="230" x2="405" y2="600"/><line x1="600" y1="230" x2="600" y2="600"/><line x1="795" y1="230" x2="795" y2="600"/><line x1="990" y1="230" x2="990" y2="600"/><line x1="1190" y1="230" x2="1190" y2="600"/></g>
+    <g fill="none" stroke-width="3"><path d="M405 520 C470 510 500 485 555 458 S650 430 700 390 S810 330 860 310 S970 300 1010 287 S1120 280 1190 275" stroke="#1976d2"/><path d="M405 470 L620 470 L620 300 L1190 300" stroke="#25834b" stroke-dasharray="8 7"/><path d="M405 500 C470 480 540 455 620 350 S720 285 780 320 S900 380 960 345 S1080 310 1190 330" stroke="#ef8b25"/></g>
+    <g font-size="11" font-weight="700"><line x1="1000" y1="218" x2="1030" y2="218" stroke="#1976d2" stroke-width="3"/><text x="1036" y="222" fill="#243b4a">PV</text><line x1="1074" y1="218" x2="1104" y2="218" stroke="#25834b" stroke-width="3" stroke-dasharray="7 5"/><text x="1110" y="222" fill="#243b4a">SP</text><line x1="1148" y1="218" x2="1178" y2="218" stroke="#ef8b25" stroke-width="3"/><text x="1184" y="222" fill="#243b4a">MV</text></g>
+    <text x="798" y="630" text-anchor="middle" fill="#435965" font-size="11">Tempo (s)</text>
+    <text x="365" y="420" text-anchor="middle" transform="rotate(-90 365 420)" fill="#435965" font-size="11">PV / SP (%)</text>
+    <text x="1228" y="420" text-anchor="middle" transform="rotate(90 1228 420)" fill="#a35c12" font-size="11">MV (%)</text>
+    <g fill="#2c4658" font-size="11"><text x="345" y="680">☑ PV</text><text x="400" y="680">☑ SP</text><text x="455" y="680">☑ MV</text></g>
+    <text x="1245" y="680" text-anchor="end" fill="#22a55f" font-size="10">Dados simulados localmente.</text>
+  </g>
+</svg>
